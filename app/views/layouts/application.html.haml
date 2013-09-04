@@ -1,12 +1,22 @@
 !!! 5
 %html
 	%head
-		%title Dictionary
-		=stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true
-		=javascript_include_tag "application", "data-turbolinks-track" => true
+		%title Online Dictionary
+		=stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
+		=javascript_include_tag 'application', 'data-turbolinks-track' => true
 		=csrf_meta_tags
-	%head
 	%body
-		=yield
-	%body
-%html
+		.wrap
+			%header{class:'header'}
+				#title
+					%h2 Online Dictionary
+				.menu-but
+					=link_to image_tag('mobile/menu.png'), '#menu'
+				%br{class:'clearfix'}
+			%hr{class:'separator'}	
+			.container
+				.content
+					=yield
+			%footer{class:'footer'}
+				.rights
+					= raw rights
