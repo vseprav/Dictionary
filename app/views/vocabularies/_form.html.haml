@@ -1,0 +1,13 @@
+= form_for [@project,@vocabulary] do |f|
+  - if @vocabulary.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@vocabulary.errors.count, "error")} prohibited this vocabulary from being saved:"
+      %ul
+        - @vocabulary.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :title
+    = f.text_field :title
+  .actions
+    = f.submit 'Save'

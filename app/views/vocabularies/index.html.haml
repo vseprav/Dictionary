@@ -1,0 +1,19 @@
+%h1 Listing vocabularies
+
+%table
+  %tr
+    %th Title
+    %th
+    %th
+    %th
+
+  - @vocabularies.each do |vocabulary|
+    %tr
+      %td= vocabulary.title
+      %td= link_to 'Show', [@project, vocabulary]
+      %td= link_to 'Edit', [:edit, @project, vocabulary]
+      %td= link_to 'Destroy', [@project, vocabulary], :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Vocabulary', new_project_vocabulary_path

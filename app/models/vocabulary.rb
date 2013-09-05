@@ -1,17 +1,14 @@
 # == Schema Information
 #
-# Table name: projects
+# Table name: vocabularies
 #
 #  id         :integer          not null, primary key
 #  title      :string(255)
-#  user_id    :integer
+#  project_id :integer
 #  created_at :datetime
 #  updated_at :datetime
 #
 
-class Project < ActiveRecord::Base
-
-  belongs_to :user
-  has_many :vocabularies
-
+class Vocabulary < ActiveRecord::Base
+  belongs_to :project
 end

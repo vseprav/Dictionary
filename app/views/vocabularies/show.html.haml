@@ -1,0 +1,9 @@
+%p#notice= notice
+
+%p
+  %b Title:
+  = @vocabulary.title
+
+= link_to 'Edit', [:edit, @project, @vocabulary]
+\|
+= link_to 'Back', project_vocabularies_path
